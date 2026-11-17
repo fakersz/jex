@@ -1,0 +1,84 @@
+.app-wrapper {
+  min-height: 100vh;
+  padding: 24px;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  flex: 1;
+}
+
+.center-hero-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.widgets-grid-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Make calendar span 2 columns on wide layout if needed */
+.widgets-grid-column .calendar-card {
+  grid-column: span 2;
+}
+
+.jex-footer {
+  margin-top: 40px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.footer-credits {
+  font-weight: 500;
+}
+
+.footer-node-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan-glow);
+  box-shadow: 0 0 6px var(--cyan-glow);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .main-content-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-wrapper {
+    padding: 12px;
+  }
+  .widgets-grid-column {
+    grid-template-columns: 1fr;
+  }
+  .widgets-grid-column .calendar-card {
+    grid-column: span 1;
+  }
+  .jex-footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,52 @@
+:root {
+  /* Color System */
+  --color-primary: #070913;
+  --color-secondary: #0d1124;
+  --color-accent: #00f2fe;
+  --color-accent-blue: #3b82f6;
+  --color-accent-violet: #9333ea;
+
+  /* State & Alert Colors */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Backgrounds */
+  --bg-main: #070913;
+  --bg-radial: radial-gradient(circle at 50% 15%, #151a36 0%, #070913 75%);
+  --bg-card: rgba(16, 22, 42, 0.65);
+  --bg-card-hover: rgba(22, 30, 56, 0.75);
+
+  /* Borders & Glass */
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-border-hover: rgba(0, 242, 254, 0.28);
+  --glass-blur: blur(16px);
+
+  /* Typography */
+  --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Space Grotesk', 'Outfit', sans-serif;
+  --text-main: #f8fafc;
+  --text-sub: #94a3b8;
+  --text-muted: #64748b;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* Radius */
+  --radius-xl: 20px;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+
+  /* Shadows */
+  --shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}

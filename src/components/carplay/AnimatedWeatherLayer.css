@@ -1,0 +1,135 @@
+.weather-animated-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Camadas de Nuvens em Parallax Sutil */
+.cloud-parallax-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.svg-cloud {
+  position: absolute;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+/* Camada 1: Traseira (Lenta) */
+.layer-back {
+  animation: floatCloudBack 22s infinite linear;
+}
+
+.cloud-svg-1 {
+  width: 110px;
+  height: 55px;
+  top: 8%;
+  left: -110px;
+}
+
+@keyframes floatCloudBack {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(360px, 0, 0); }
+}
+
+/* Camada 2: Frontal (Rápida, mais nítida) */
+.layer-front {
+  animation: floatCloudFront 14s infinite linear 5s;
+}
+
+.cloud-svg-2 {
+  width: 130px;
+  height: 65px;
+  top: 25%;
+  left: -130px;
+}
+
+@keyframes floatCloudFront {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(370px, 0, 0); }
+}
+
+/* Sol Brilhante e Raios */
+.sun-glowing-wrapper {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.sun-core {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(253, 224, 71, 0.95) 0%, rgba(245, 158, 11, 0.45) 55%, rgba(245, 158, 11, 0) 75%);
+  animation: sunPulseCore 4s infinite alternate ease-in-out;
+  box-shadow: 0 0 45px rgba(253, 224, 71, 0.5);
+}
+
+@keyframes sunPulseCore {
+  0% { transform: scale(0.95); opacity: 0.85; }
+  100% { transform: scale(1.15); opacity: 1; }
+}
+
+/* Chuva */
+.rain-curtain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.rain-drop {
+  position: absolute;
+  width: 2px;
+  height: 16px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(56, 189, 248, 0.9));
+  border-radius: 1px;
+  animation: rainFallFast 1s infinite linear;
+}
+
+.drop-1 { left: 20%; animation-delay: 0s; }
+.drop-2 { left: 50%; animation-delay: 0.3s; }
+.drop-3 { left: 80%; animation-delay: 0.6s; }
+
+@keyframes rainFallFast {
+  0% { transform: translateY(-20px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(130px); opacity: 0; }
+}
+
+/* Estrelas Cintilantes */
+.night-stars-field {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.twinkle-star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #ffffff;
+  animation: starTwinkle 2.5s infinite alternate ease-in-out;
+}
+
+.star-1 { top: 20%; left: 30%; animation-delay: 0s; }
+.star-2 { top: 40%; left: 75%; animation-delay: 1s; }
+
+@keyframes starTwinkle {
+  0% { transform: scale(0.8); opacity: 0.3; }
+  100% { transform: scale(1.4); opacity: 1; }
+}
